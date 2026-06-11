@@ -1,9 +1,5 @@
-numpy
-scipy
 opencv-python
 dlib
 imutils
-matplotlib
-pandas
-playsound
-jupyter
+scipy
+numpy
