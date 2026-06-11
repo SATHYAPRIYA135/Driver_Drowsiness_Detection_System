@@ -1,62 +1,85 @@
 # 🚗 Driver Drowsiness Detection System
 
-## 📖 Overview
+## 📖 Project Overview
 
-Driver fatigue is one of the major causes of road accidents worldwide. This project presents a **real-time Driver Drowsiness Detection System** that continuously monitors a driver's eye movements using computer vision techniques and alerts the driver when signs of drowsiness are detected.
+Driver fatigue is a major cause of road accidents worldwide. This project presents a **Real-Time Driver Drowsiness Detection System** that monitors a driver's eye movements through a webcam and detects signs of drowsiness using Computer Vision techniques.
 
-The system uses **OpenCV**, **Dlib Facial Landmark Detection**, and **Eye Aspect Ratio (EAR)** analysis to determine whether the driver's eyes remain closed for a prolonged period. If drowsiness is detected, the system displays an alert message to help prevent accidents.
+The system uses **Dlib Facial Landmark Detection** and **Eye Aspect Ratio (EAR)** analysis to determine whether the driver's eyes remain closed for a prolonged period. When drowsiness is detected, an alert message is displayed, helping to prevent accidents and improve road safety.
 
 ---
 
 ## 🎯 Objective
 
-To develop a real-time driver monitoring system capable of detecting drowsiness through eye closure analysis and providing timely alerts to improve road safety.
+The primary objective of this project is to develop a real-time driver monitoring system that:
+
+* Detects driver drowsiness using eye movement analysis.
+* Monitors eye closure continuously.
+* Alerts the driver when signs of fatigue are detected.
+* Enhances road safety through proactive monitoring.
 
 ---
 
-## 🛠 Technologies Used
+## ✨ Features
+
+* Real-time webcam monitoring
+* Face detection using Dlib
+* Facial landmark detection
+* Eye Aspect Ratio (EAR) calculation
+* Drowsiness detection based on eye closure
+* Alert message generation
+* Lightweight and easy-to-use system
+
+---
+
+## 🛠️ Technologies Used
 
 * Python
 * OpenCV
 * Dlib
 * Imutils
 * SciPy
+* NumPy
 * Computer Vision
+
+---
+
+## 💻 Development Environment
+
+* Python 3.x
+* Python IDLE
+* Windows Operating System
+* Webcam
 
 ---
 
 ## ⚙️ Working Principle
 
-The system follows these steps:
-
 1. Capture live video using a webcam.
-2. Detect the driver's face using Dlib's face detector.
-3. Identify facial landmarks around both eyes.
+2. Detect the driver's face.
+3. Extract facial landmarks around both eyes.
 4. Calculate the Eye Aspect Ratio (EAR).
 5. Compare EAR with a predefined threshold.
-6. Monitor consecutive frames for eye closure.
-7. Trigger an alert when drowsiness is detected.
+6. Monitor eye closure across consecutive frames.
+7. Display an alert when drowsiness is detected.
 
 ---
 
 ## 🔍 Eye Aspect Ratio (EAR)
 
-EAR is calculated using six eye landmarks.
+The Eye Aspect Ratio (EAR) is used to determine whether the eyes are open or closed.
 
-EAR decreases when the eyes are closed and increases when the eyes are open.
+### Parameters Used
 
-The system uses:
+* EAR Threshold: **0.25**
+* Consecutive Frames Threshold: **20 Frames**
 
-* EAR Threshold = **0.25**
-* Consecutive Frames = **20**
-
-When EAR remains below the threshold for 20 consecutive frames, the driver is considered drowsy.
+If the EAR remains below the threshold for 20 consecutive frames, the system identifies the driver as drowsy and displays an alert message.
 
 ---
 
-## 📦 Requirements
+## 📦 Installation
 
-Install dependencies using:
+Install the required libraries:
 
 ```bash
 pip install -r requirements.txt
@@ -64,9 +87,9 @@ pip install -r requirements.txt
 
 ---
 
-## ▶️ Run the Project
+## ▶️ How to Run
 
-### Step 1
+### Step 1: Download Facial Landmark Model
 
 Download the Dlib facial landmark model:
 
@@ -74,21 +97,30 @@ Download the Dlib facial landmark model:
 shape_predictor_68_face_landmarks.dat
 ```
 
-Place it inside:
+### Step 2: Create Folder Structure
 
 ```text
-models/
+project/
+│
+├── driver_drowsiness_detection.py
+└── models/
+    └── shape_predictor_68_face_landmarks.dat
 ```
 
-### Step 2
+### Step 3: Run the Program
 
-Run the Python file:
+Using Python IDLE:
+
+* Open `driver_drowsiness_detection.py`
+* Click **Run → Run Module (F5)**
+
+Or using Command Prompt:
 
 ```bash
 python driver_drowsiness_detection.py
 ```
 
-### Step 3
+### Step 4: Exit Application
 
 Press:
 
@@ -96,29 +128,34 @@ Press:
 q
 ```
 
-to quit the application.
+to close the webcam window and terminate the program.
 
 ---
 
-## 📊 Features
+## 📊 Output
 
-* Real-time webcam monitoring
-* Face detection
-* Facial landmark detection
-* Eye Aspect Ratio calculation
-* Drowsiness detection
-* Alert notification system
-* Lightweight and easy to run
+### Non-Drowsy State
+
+* Eyes open
+* EAR above threshold
+* No alert displayed
+
+### Drowsy State
+
+* Eyes closed for consecutive frames
+* EAR below threshold
+* Alert message displayed on screen
 
 ---
 
-## 🔮 Future Improvements
+## 🚀 Future Enhancements
 
 * Audio alarm integration
 * Yawning detection
-* Mobile application support
+* Mobile application deployment
 * Night-time driver monitoring
-* Deep learning based eye-state classification
+* Deep learning based fatigue detection
+* Vehicle safety system integration
 
 ---
 
